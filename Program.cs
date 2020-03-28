@@ -10,6 +10,7 @@ namespace CompManTest
         static void Main(string[] args)
         {
             DeviceFunctions.getIP();
+            DeviceFunctions.getMAC();
            
         }
 

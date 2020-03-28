@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Net.NetworkInformation;
 
 
 namespace CompManTest
@@ -22,6 +23,24 @@ namespace CompManTest
             //return the IP as string to use with rest of program.
             return systemIP;
 
+        }
+
+        public static string getMAC()
+        {
+            string systemMAC = null;
+
+            foreach(NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                if(nic.OperationalStatus == OperationalStatus.Up && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+                {
+                    systemMAC = nic.GetPhysicalAddress().ToString();
+                    break;
+                }
+            }
+
+            //Need to format the MAC Address properly. 
+            Console.WriteLine(systemMAC);
+            return systemMAC;
         }
     }
 }
