@@ -11,7 +11,7 @@ namespace CompManTest
         {
             DeviceFunctions.getIP();
             DeviceFunctions.getMAC();
-           
+            DeviceFunctions.getPCName();
         }
 
 

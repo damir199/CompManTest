@@ -42,5 +42,12 @@ namespace CompManTest
             Console.WriteLine(systemMAC);
             return systemMAC;
         }
+
+        public static string getPCName()
+        {
+            string PC_Name = Environment.MachineName;
+            Console.WriteLine(PC_Name);
+            return PC_Name;
+        }
     }
 }
