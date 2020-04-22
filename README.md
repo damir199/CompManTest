@@ -4,10 +4,10 @@
 
 DeviceFunctions.cs Contains the functionalitity to retrieve Device data.
 
-Functions: 
-getIP()
-getMAC()
-getPCName()
+Functions: <br>
+getIP() <br>
+getMAC() <br>
+getPCName() <br>
 getPublicIP()
 
 
