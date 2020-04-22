@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
 
@@ -16,7 +17,7 @@ namespace CompManTest
             //TO-DO: 
             //Create a loop for addresslist that selects the ipv4 address instead of selecting the index.
             systemIP = Dns.GetHostEntry(Dns.GetHostName().ToString()).AddressList[1].ToString();
-
+            
             //                  ----TESTING------
             Console.WriteLine(systemIP.ToString());
 
@@ -28,12 +29,14 @@ namespace CompManTest
         public static string getMAC()
         {
             string systemMAC = null;
+            string systemGateway = null;
 
             foreach(NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
             {
                 if(nic.OperationalStatus == OperationalStatus.Up && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
                 {
                     systemMAC = nic.GetPhysicalAddress().ToString();
+                    systemGateway = nic.GetIPProperties().GatewayAddresses.ToString();
                     break;
                 }
             }
@@ -49,5 +52,16 @@ namespace CompManTest
             Console.WriteLine(PC_Name);
             return PC_Name;
         }
+
+
+        public static string getPublicIP()
+        {
+            string ipAddress = new WebClient().DownloadString("https://ipv4.icanhazip.com/");
+            ipAddress.TrimEnd();
+            Console.WriteLine(ipAddress);
+            return ipAddress;
+
+        }
     }
+
 }
