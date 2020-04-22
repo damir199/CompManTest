@@ -19,7 +19,7 @@ namespace CompManTest
             systemIP = Dns.GetHostEntry(Dns.GetHostName().ToString()).AddressList[1].ToString();
             
             //                  ----TESTING------
-            Console.WriteLine(systemIP.ToString());
+            //Console.WriteLine(systemIP.ToString());
 
             //return the IP as string to use with rest of program.
             return systemIP;
@@ -53,7 +53,6 @@ namespace CompManTest
             return PC_Name;
         }
 
-
         public static string getPublicIP()
         {
             string ipAddress = new WebClient().DownloadString("https://ipv4.icanhazip.com/");
@@ -62,6 +61,8 @@ namespace CompManTest
             return ipAddress;
 
         }
+
+
     }
 
 }

@@ -9,10 +9,11 @@ namespace CompManTest
 
         static void Main(string[] args)
         {
-            DeviceFunctions.getIP();
-            DeviceFunctions.getMAC();
-            DeviceFunctions.getPCName();
-            DeviceFunctions.getPublicIP();
+           // DeviceFunctions.getIP();
+            //DeviceFunctions.getMAC();
+            //DeviceFunctions.getPCName();
+            //DeviceFunctions.getPublicIP();
+            NetFunctions.pScan();
         }
 
 
